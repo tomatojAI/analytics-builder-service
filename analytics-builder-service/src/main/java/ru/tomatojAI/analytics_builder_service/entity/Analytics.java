@@ -1,9 +1,7 @@
 package ru.tomatojAI.analytics_builder_service.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +10,7 @@ import java.time.LocalDateTime;
 @ToString
 @Entity
 @Table(name = "analytics")
+@NoArgsConstructor
 public class Analytics {
 
 
@@ -32,6 +31,11 @@ public class Analytics {
     @Column(name = "average_salary")
     private Long averageSalary;
 
-
+    public Analytics(LocalDateTime datetime, Long vacancyCount, String query, Long averageSalary) {
+        this.datetime = datetime;
+        this.vacancyCount = vacancyCount;
+        this.query = query;
+        this.averageSalary = averageSalary;
+    }
 
 }

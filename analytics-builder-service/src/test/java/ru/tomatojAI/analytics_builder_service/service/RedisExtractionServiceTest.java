@@ -28,13 +28,6 @@ public class RedisExtractionServiceTest {
     @Autowired
     private RedisTemplate<String, VacancyDTO> redisTemplate;
 
-    @BeforeEach
-    @AfterEach
-    public void flushRedis() {
-        Objects.requireNonNull(redisTemplate.getConnectionFactory())
-                .getConnection()
-                .flushAll();
-    }
 
     @Test
     public void findByKeyTest() {
